@@ -7,10 +7,10 @@ let B = 1
 let L = "Left"
 let R = "Right"
 
-let N = true
-let S = true
-let E = true
-let W = true
+let N = "N"
+let S = "S"
+let E = "E"
+let W = "W"
 
 //-----------------------------------------MOVE ROVER
 
@@ -62,7 +62,7 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
             return roverDirection = "E"
         }
         if (rotateDirection === L) {
-            return roverDirection = "O"
+            return roverDirection = "W"
         }
     }
     if (actualDirection === "E") {
@@ -95,9 +95,9 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
 // rotateRover(roverDirection, R)
 // console.log(roverDirection)
 
-rotateRover(roverDirection, R)
+rotateRover(roverDirection, L)
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
-moveRover("E", "F")
+moveRover(roverDirection.toString(), "F")
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
