@@ -12,7 +12,7 @@ let S = "S"
 let E = "E"
 let W = "W"
 
-
+//---------------------------------------PLUTO IS A SPHERE
 
 let plutoIsASphere = (position) => {
     if (position[0] === -1) {
@@ -21,9 +21,19 @@ let plutoIsASphere = (position) => {
     if (position[1] === -1) {
         roverPosition[1] = 100
     }
+    if (position[0] === 101) {
+        roverPosition[0] = 0
+    }
+    if (position[1] === 101) {
+        roverPosition[1] = 0
+    }
 }
 
+//-----------------------------------------DETECTING OBSTACLES
 
+let thereIsAnAlienHere = () => {
+
+}
 
 //-----------------------------------------MOVE ROVER
 
@@ -117,8 +127,6 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
     }
 
 }
-
-
 
 
 // rotateRover(roverDirection, R)
