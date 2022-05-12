@@ -1,7 +1,6 @@
-let x = 0
-let y = 0
-let roverPosition = [x, y]
+let roverPosition = [0, 0]
 let roverDirection = "N"
+
 let F = 1
 let B = 1
 let L = "Left"
@@ -11,6 +10,8 @@ let N = "N"
 let S = "S"
 let E = "E"
 let W = "W"
+
+
 
 //---------------------------------------PLUTO IS A SPHERE
 
@@ -31,21 +32,26 @@ let plutoIsASphere = (position) => {
 
 //-----------------------------------------DETECTING OBSTACLES
 
-let thereIsAnAlienHere = () => {
-
+let IsThereAnAlienHere = (alien) => {
+    if (alien) {
+        console.log("%cHelp!, there is an Alien here and its trying to eat me!","font-size:30px;color:red")
+        throw roverPosition;
+    }
 }
 
 //-----------------------------------------MOVE ROVER
 
 
-let moveRover = (direction, move) => {
+let moveRover = (direction, move, alien = false) => {
     if (direction === "N") {
         if (move === "F") {
+            IsThereAnAlienHere(alien)
             roverPosition[1] += F
             plutoIsASphere(roverPosition)
             return roverPosition
         }
         if (move === "B") {
+            IsThereAnAlienHere(alien)
             roverPosition[1] -= B
             plutoIsASphere(roverPosition)
             return roverPosition
@@ -53,11 +59,13 @@ let moveRover = (direction, move) => {
     }
     if (direction === "S") {
         if (move === "F") {
+            IsThereAnAlienHere(alien)
             roverPosition[1] -= F
             plutoIsASphere(roverPosition)
             return roverPosition
         }
         if (move === "B") {
+            IsThereAnAlienHere(alien)
             roverPosition[1] += B
             plutoIsASphere(roverPosition)
             return roverPosition
@@ -65,11 +73,13 @@ let moveRover = (direction, move) => {
     }
     if (direction === "E") {
         if (move === "F") {
+            IsThereAnAlienHere(alien)
             roverPosition[0] += F
             plutoIsASphere(roverPosition)
             return roverPosition
         }
         if (move === "B") {
+            IsThereAnAlienHere(alien)
             roverPosition[0] -= B
             plutoIsASphere(roverPosition)
             return roverPosition
@@ -77,11 +87,13 @@ let moveRover = (direction, move) => {
     }
     if (direction === "W") {
         if (move === "F") {
+            IsThereAnAlienHere(alien)
             roverPosition[0] -= F
             plutoIsASphere(roverPosition)
             return roverPosition
         }
         if (move === "B") {
+            IsThereAnAlienHere(alien)
             roverPosition[0] += B
             plutoIsASphere(roverPosition)
             return roverPosition
@@ -128,12 +140,19 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
 
 }
 
+//------------------------------------------------TESTING
 
-// rotateRover(roverDirection, R)
-rotateRover(roverDirection, L)
+rotateRover(roverDirection, R)
+rotateRover(roverDirection, R)
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
 moveRover(roverDirection.toString(), "F")
+moveRover(roverDirection.toString(), "F")
+rotateRover(roverDirection, L)
+rotateRover(roverDirection, L)
+moveRover(roverDirection.toString(), "F")
+rotateRover(roverDirection, R)
+moveRover(roverDirection.toString(), "F", true)
 // moveRover(roverDirection.toString(), "B")
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
