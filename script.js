@@ -6,14 +6,17 @@ let F = 1
 let B = -1
 let N = true
 
-console.log(roverPosition)
+console.log("before moving",roverPosition)
 let moveRover = (direction, move) => {
-    if(N) {
-        if(F){
+    if(direction === N) {
+        if(move === F){
             return roverPosition[1] += F
+        }
+        if(move === B){
+            return roverPosition[1] += B
         }
     }
     return roverPosition = []
 }
-moveRover(N, F)
-console.log(roverPosition)
+moveRover(N, B)
+console.log("after moving",roverPosition)
