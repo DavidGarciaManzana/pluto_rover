@@ -10,26 +10,42 @@ let R = "Right"
 let N = true
 let S = true
 let E = true
-let O = true
+let W = true
 
 //-----------------------------------------MOVE ROVER
 
 // console.log("before moving",roverPosition)
 let moveRover = (direction, move) => {
-    if(direction === N) {
-        if(move === F){
+    if (direction === "N") {
+        if (move === "F") {
             return roverPosition[1] += F
         }
-        if(move === B){
+        if (move === "B") {
             return roverPosition[1] -= B
         }
     }
-    if(direction === S) {
-        if(move === F ){
+    if (direction === "S") {
+        if (move === "F") {
             return roverPosition[1] -= F
         }
-        if(move === B){
+        if (move === "B") {
             return roverPosition[1] += B
+        }
+    }
+    if (direction === "E") {
+        if (move === "F") {
+            return roverPosition[0] += F
+        }
+        if (move === "B") {
+            return roverPosition[0] -= B
+        }
+    }
+    if (direction === "W") {
+        if (move === "F") {
+            return roverPosition[0] -= F
+        }
+        if (move === "B") {
+            return roverPosition[0] += B
         }
     }
 
@@ -79,10 +95,9 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
 // rotateRover(roverDirection, R)
 // console.log(roverDirection)
 
-rotateRover(roverDirection,R)
-rotateRover(roverDirection,R)
-console.log("dir",roverDirection)
-console.log("pos",roverPosition)
-moveRover(S,B)
-console.log("dir",roverDirection)
-console.log("pos",roverPosition)
+rotateRover(roverDirection, R)
+console.log("dir", roverDirection)
+console.log("pos", roverPosition)
+moveRover("E", "F")
+console.log("dir", roverDirection)
+console.log("pos", roverPosition)
