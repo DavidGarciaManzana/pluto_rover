@@ -12,47 +12,73 @@ let S = "S"
 let E = "E"
 let W = "W"
 
+
+
+let plutoIsASphere = (position) => {
+    if (position[0] === -1) {
+        roverPosition[0] = 100
+    }
+    if (position[1] === -1) {
+        roverPosition[1] = 100
+    }
+}
+
+
+
 //-----------------------------------------MOVE ROVER
 
-// console.log("before moving",roverPosition)
+
 let moveRover = (direction, move) => {
     if (direction === "N") {
         if (move === "F") {
-            return roverPosition[1] += F
+            roverPosition[1] += F
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
         if (move === "B") {
-            return roverPosition[1] -= B
+            roverPosition[1] -= B
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
     }
     if (direction === "S") {
         if (move === "F") {
-            return roverPosition[1] -= F
+            roverPosition[1] -= F
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
         if (move === "B") {
-            return roverPosition[1] += B
+            roverPosition[1] += B
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
     }
     if (direction === "E") {
         if (move === "F") {
-            return roverPosition[0] += F
+            roverPosition[0] += F
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
         if (move === "B") {
-            return roverPosition[0] -= B
+            roverPosition[0] -= B
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
     }
     if (direction === "W") {
         if (move === "F") {
-            return roverPosition[0] -= F
+            roverPosition[0] -= F
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
         if (move === "B") {
-            return roverPosition[0] += B
+            roverPosition[0] += B
+            plutoIsASphere(roverPosition)
+            return roverPosition
         }
     }
-
-    return roverPosition = []
 }
-// moveRover(N, F)
-// console.log("after moving",roverPosition)
+
 
 // -------------------------------------------ROTATE ROVER
 
@@ -92,12 +118,14 @@ let rotateRover = (actualDirection = "N", rotateDirection = R) => {
 
 }
 
-// rotateRover(roverDirection, R)
-// console.log(roverDirection)
 
+
+
+// rotateRover(roverDirection, R)
 rotateRover(roverDirection, L)
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
 moveRover(roverDirection.toString(), "F")
+// moveRover(roverDirection.toString(), "B")
 console.log("dir", roverDirection)
 console.log("pos", roverPosition)
