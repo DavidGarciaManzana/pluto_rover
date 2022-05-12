@@ -13,7 +13,6 @@ let E = true
 let O = true
 
 
-
 // console.log("before moving",roverPosition)
 // let moveRover = (direction, move) => {
 //     if(direction === N) {
@@ -30,27 +29,37 @@ let O = true
 // moveRover(N, F)
 // console.log("after moving",roverPosition)
 
-let rotateRover = (actualDirection = "N",rotateDirection = R) => {
+let rotateRover = (actualDirection = "N", rotateDirection = R) => {
     if (actualDirection === "N") {
         if (rotateDirection === R) {
             return roverDirection = "E"
         }
-        if(rotateDirection === L ){
+        if (rotateDirection === L) {
             return roverDirection = "O"
         }
     }
-    if(actualDirection === "E") {
+    if (actualDirection === "E") {
         if (rotateDirection === R) {
             return roverDirection = "S"
         }
-        if(rotateDirection === L ){
+        if (rotateDirection === L) {
             return roverDirection = "N"
+        }
+    }
+    if (actualDirection === "S") {
+        if (rotateDirection === R) {
+            return roverDirection = "O"
+        }
+        if (rotateDirection === L) {
+            return roverDirection = "E"
         }
     }
 
 }
 
-rotateRover(roverDirection,R)
+rotateRover(roverDirection, R)
 console.log(roverDirection)
-rotateRover(roverDirection,L)
+rotateRover(roverDirection, R)
+console.log(roverDirection)
+rotateRover(roverDirection, R)
 console.log(roverDirection)
