@@ -39,8 +39,18 @@ let rotateRover = (actualDirection = "N",rotateDirection = R) => {
             return roverDirection = "O"
         }
     }
+    if(actualDirection === "E") {
+        if (rotateDirection === R) {
+            return roverDirection = "S"
+        }
+        if(rotateDirection === L ){
+            return roverDirection = "N"
+        }
+    }
 
 }
 
+rotateRover(roverDirection,R)
+console.log(roverDirection)
 rotateRover(roverDirection,L)
 console.log(roverDirection)
